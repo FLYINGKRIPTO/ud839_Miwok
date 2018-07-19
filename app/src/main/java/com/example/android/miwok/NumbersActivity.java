@@ -1,22 +1,12 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,5 +14,26 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        ArrayList<String> wordseng = new ArrayList<String>();
+        wordseng.add("one");
+        wordseng.add("two");
+        wordseng.add("three");
+        wordseng.add("four");
+        wordseng.add("five");
+        wordseng.add("six");
+        wordseng.add("seven");
+        wordseng.add("eight");
+        wordseng.add("nine");
+        wordseng.add("ten");
+
+         //Now we need to add these to textViews
+       //first we need to find the Layout in which we have to add the child views
+        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
+        //Now we need to create and add textViews to the linear layout just created
+        TextView wordView = new TextView(this);
+        wordView.setText(wordseng.get(0));
+        //Now I am going to add wordView as the child to the parent view rootview
+        rootView.addView(wordView);
     }
 }
