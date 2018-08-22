@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
-
                 // Start the new activity
                 startActivity(numbersIntent);
             }
